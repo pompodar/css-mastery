@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.container:nth-of-type(1) { justify-content: flex-start;}
+div.container:nth-of-type(2) { justify-content: flex-end;}
+div.container:nth-of-type(3) { justify-content: center;}
+div.container:nth-of-type(4) { justify-content: space-between;}
+div.container:nth-of-type(5) { justify-content: space-around;}
+
+.box1 {}
+.box2 {}
+.box3 {}
+.box4 {}
+.box5 {}
+.box6 {}
+.box7 {}
+.box8 {}
+.box9 {}
+.box10 {}
+.box11 {}
+.box12 {}
+.box13 {}
+.box14 {}
+.box15 {}
+.box16 {}
+.box17 {}
+.box18 {}
+.box19 {}
+.box20 {}
+.box21 {}
+.box22 {}
+.box23 {}
+.box24 {}
+.box25 {}
+.box26 { margin-right: auto;}
+.box27 {}
+.box28 {}
+.box29 {}
+.box30 {}
+.box31 {}
+.box32 { margin-left: auto;}
+.box33 {}
+.box34 {}
+.box35 {}
+.box36 { margin-right: auto; }
+.box37 {}
+.box38 {}
+.box39 {}
+.box40 { margin-left: auto; }
+.box41 { margin-left: auto; }
+.box42 { margin-right: auto; }
+.box43 {}
+.box44 { margin-left: auto; }
+.box45 { margin-right: auto; }
+.box46 {}
+.box47 {}
+.box48 {}
+.box49 { margin-left: auto; }
+.box50 {}
+.box51 {}
+.box52 {}
+.box53 {}
+.box54 {}
+.box55 { align-self: flex-end; margin-left: auto; }
+.box56 { margin: auto; }
+.box57 {}
+.box58 {}
+.box59 {}
+.box60 {}
+.box61 { margin-top: auto; visibility: hidden; }
+.box62 { margin-top: auto; }
+.box63 { margin-top: auto; margin-bottom: auto; }
+.box64 {}
+.box65 {}
+.box66 { margin-left: auto; }
+.box67 { margin-left: auto; }
+.box68 { margin-left: auto; margin-right: auto; visibility: hidden; }
+.box69 {}
+.box70 {}
+.box71 { width: 150px !important; }
+.box72 { position: absolute; left: 50%; transform: translate(-50%,0); }
+.box73 { width: 25px !important; margin-left: auto; }
+.box74 {}
+.box75 {}
+.box76 { height: 100px !important; }
+.box77 { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); }
+.box78 { margin-top: auto; height: 25px !important; }
+.box79 {}
+.box80 {}
+.box81 {}
+.box82 {}
+.box83 {}
+.box84 {}
+.box85 {}
+.box86 {}
+.box87 {}
+.box88 {}
+.box89 {}
+.box90 {}
+
+#space-same { justify-content: space-between; }
+#space-same::before { content: ''; }
+#space-same::after  { content: ''; }
+
+/* can ignore styles below; decorative only */
+
+.container {
+    display: flex;
+    padding: 6px 0;
+    background-color: yellow;
+    border: 1px solid #ccc;
+    width: 90%;
+}
+
+.box {
+    height: 50px;
+    width: 75px;
+    background-color: lightgreen;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+body { background-color: white; }
+
+p { margin-bottom: 5px; }
+
+    </style>
+</head>
+<body>
+    <p><code>justify-content: flex-start;</code></p>
+<div class="container">
+    <div class="box box1"><span>1</span></div>
+    <div class="box box2"><span>2</span></div>
+    <div class="box box3"><span>3</span></div>
+    <div class="box box4"><span>4</span></div>
+    <div class="box box5"><span>5</span></div>
+</div>
+
+<p><code>justify-content: flex-end;</code></p>
+<div class="container">
+    <div class="box box6"><span>6</span></div>
+    <div class="box box7"><span>7</span></div>
+    <div class="box box8"><span>8</span></div>
+    <div class="box box9"><span>9</span></div>
+    <div class="box box10"><span>10</span></div>
+</div>
+
+<p><code>justify-content: center;</code></p>
+<div class="container">
+    <div class="box box11"><span>11</span></div>
+    <div class="box box12"><span>12</span></div>
+    <div class="box box13"><span>13</span></div>
+    <div class="box box14"><span>14</span></div>
+    <div class="box box15"><span>15</span></div>
+</div>
+
+<p><code>justify-content: space-between;</code></p>
+<div class="container">
+    <div class="box box16"><span>16</span></div>
+    <div class="box box17"><span>17</span></div>
+    <div class="box box18"><span>18</span></div>
+    <div class="box box19"><span>19</span></div>
+    <div class="box box20"><span>20</span></div>
+</div>
+
+<p><code>justify-content: space-around;</code></p>
+<div class="container">
+    <div class="box box21"><span>21</span></div>
+    <div class="box box22"><span>22</span></div>
+    <div class="box box23"><span>23</span></div>
+    <div class="box box24"><span>24</span></div>
+    <div class="box box25"><span>25</span></div>
+</div>
+
+<p><code>.box26 { margin-right: auto; }</code></p>
+<div class="container">
+    <div class="box box26"><span>26</span></div>
+    <div class="box box27"><span>27</span></div>
+    <div class="box box28"><span>28</span></div>
+    <div class="box box29"><span>29</span></div>
+    <div class="box box30"><span>30</span></div>
+</div>
+
+<p><code>.box32 { margin-left: auto; }</code></p>
+<div class="container">
+    <div class="box box31"><span>31</span></div>
+    <div class="box box32"><span>32</span></div>
+    <div class="box box33"><span>33</span></div>
+    <div class="box box34"><span>34</span></div>
+    <div class="box box35"><span>35</span></div>
+</div>
+
+<p><code>.box36 { margin-right: auto; } .box40 { margin-left: auto;}</code></p>
+<div class="container">
+    <div class="box box36"><span>36</span></div>
+    <div class="box box37"><span>37</span></div>
+    <div class="box box38"><span>38</span></div>
+    <div class="box box39"><span>39</span></div>
+    <div class="box box40"><span>40</span></div>
+</div>
+
+<p><code>.box41, .box44 { margin-left: auto; } .box42, .box45 { margin-right: auto;}</code></p>
+<div class="container">
+    <div class="box box41"><span>41</span></div>
+    <div class="box box42"><span>42</span></div>
+    <div class="box box43"><span>43</span></div>
+    <div class="box box44"><span>44</span></div>
+    <div class="box box45"><span>45</span></div>
+</div>
+
+<p><code>.box49 { margin-left: auto; }</code></p>
+<div class="container">
+    <div class="box box46"><span>46</span></div>
+    <div class="box box47"><span>47</span></div>
+    <div class="box box48"><span>48</span></div>
+    <div class="box box49"><span>49</span></div>
+    <div class="box box50"><span>50</span></div>
+</div>
+
+<p><code>.box55 { align-self: flex-end; margin-left: auto; }</code></p>
+<div class="container" style="height: 200px; padding: 0;">
+    <div class="box box51"><span>51</span></div>
+    <div class="box box52"><span>52</span></div>
+    <div class="box box53"><span>53</span></div>
+    <div class="box box54"><span>54</span></div>
+    <div class="box box55"><span>55</span></div>
+</div>
+
+<p><code>.box56 { margin: auto; }</code></p>
+<div class="container" style="height: 200px; padding: 0;">
+    <div class="box box56"><span>56</span></div>
+    <!-- <div class="box box57"><span>57</span></div>
+    <div class="box box58"><span>58</span></div>
+    <div class="box box59"><span>59</span></div>
+    <div class="box box60"><span>60</span></div> -->
+</div>
+
+<p><pre><code>
+    .container { flex-direction: column; align-items: center; }
+    .box61     { margin-top: auto; visibility: hidden; }
+    .box62     { margin-top: auto; }
+    .box63     { margin-top: auto; margin-bottom: auto; }</code></pre>
+</p>
+<div class="container" style="flex-direction: column; align-items: center; height: 200px; padding: 0;">
+    <div class="box box61"><span>61</span></div>
+    <div class="box box62"><span>62</span></div>
+    <div class="box box63"><span>63</span></div>
+    <!-- <div class="box box64"><span>64</span></div>
+    <div class="box box65"><span>65</span></div> -->
+</div>
+
+<p><pre><code>
+    .box66     { margin-left: auto; }
+    .box67     { margin-left: auto; }
+    .box68     { margin-left: auto; margin-right: auto; visibility: hidden;  }</code></pre></p>
+<div class="container">
+    <div class="box box66"><span>66</span></div>
+    <div class="box box67"><span>67</span></div>
+    <div class="box box68"><span>68</span></div>
+    <!-- <div class="box box69"><span>69</span></div>
+    <div class="box box70"><span>70</span></div> -->
+</div>
+
+<p><pre><code>
+    .container { position: relative; }
+    .box71     { width: 150px; }
+    .box72     { position: absolute; left: 50%; transform: translate(-50%,0); }
+    .box73     { width: 25px; margin-left: auto; }</code></pre></p>
+<div class="container" style="position: relative">
+    <div class="box box71"><span>71</span></div>
+    <div class="box box72"><span>72</span></div>
+    <div class="box box73"><span>73</span></div>
+    <!-- <div class="box box74"><span>74</span></div>
+    <div class="box box75"><span>75</span></div> -->
+</div>
+
+<p><pre><code>
+    .container { flex-direction: column; align-items: center; position: relative; }
+    .box76     { height: 100px; }
+    .box77     { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); }
+    .box78     { height: 25px; margin-top: auto; }</code></pre></p>
+<div class="container" style="flex-direction: column; align-items: center; position: relative; height: 300px; padding: 0">
+    <div class="box box76"><span>76</span></div>
+    <div class="box box77"><span>77</span></div>
+    <div class="box box78"><span>78</span></div>
+    <!-- <div class="box box79"><span>79</span></div>
+    <div class="box box80"><span>80</span></div> -->
+</div>
+
+<p><pre><code>
+    .container          { justify-content: space-between; }
+    .container::before  { content: ''; }
+    .container::after   { content: ''; }
+</code></pre></p>
+<div class="container" id="space-same">
+    <div class="box box81"><span>81</span></div>
+    <div class="box box82"><span>82</span></div>
+    <div class="box box83"><span>83</span></div>
+    <div class="box box84"><span>84</span></div>
+    <div class="box box85"><span>85</span></div>
+</div>
+
+<!--
+
+<p><pre><code>
+    .container { }
+    .box86     { }
+    .box87     { }
+    .box88     { }
+    .box89     { }
+    .box90     { }
+</code></pre></p>
+<div class="container" style="">
+    <div class="box box86"><span>86</span></div>
+    <div class="box box87"><span>87</span></div>
+    <div class="box box88"><span>88</span></div>
+    <div class="box box89"><span>89</span></div>
+    <div class="box box90"><span>90</span></div>
+</div>
+
+-->
+
+
+
+
+
+
+</body>
+</html>
