@@ -1,0 +1,75 @@
+@import "rating_block";
+$myFont: Helvetica, sans-serif;
+$myWidth: 680px;
+@mixin important-text {
+  color: red;
+  font-size: 25px;
+  font-weight: bold;
+  border: 1px solid blue;
+}
+@mixin special-text {
+  @include important-text;
+}
+@mixin bordered($color: blue, $width: 30px) {
+  border: $width solid $color;
+}
+
+.rating-test-block {
+  $myFontSize: 40px !global;
+  $myColor: red;
+  font-size: $myFontSize;
+  background-color: $myColor;
+  width: $myWidth;
+  font: {
+    family: Helvetica, sans-serif;
+    size: 18px;
+    weight: bold;
+  }
+  
+  text: {
+    align: center;
+    transform: lowercase;
+    overflow: hidden;
+  }
+  @include important-text;
+  @include bordered($color: orange);
+
+
+  .section-title, .sample-class {
+    margin-bottom: 16px;
+    @extend .rating-test-block;
+    & {
+      background-color: black;
+    }
+    &__copy {
+      display: none;
+      padding: 1rem 1.5rem 2rem 1.5rem;
+      color: gray;
+      line-height: 1.6;
+      font-size: 14px;
+      font-weight: 500;
+    }
+      &--open {
+        display: block;
+      }
+  }
+  ul > {
+    li {
+      list-style-type: none;
+    }
+  }
+  
+  h2 {
+    + p {
+      border-top: 1px solid gray;
+    }
+  }
+  
+  p {
+    ~ {
+      span {
+        opacity: 0.8;
+      }
+    }
+  }
+}
