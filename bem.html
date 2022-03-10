@@ -1,0 +1,161 @@
+@import "rating_block";
+$myFont: Helvetica, sans-serif;
+$myWidth: 680px;
+@mixin important-text {
+  color: red;
+  font-size: 25px;
+  font-weight: bold;
+  border: 1px solid blue;
+}
+@mixin special-text {
+  @include important-text;
+}
+@mixin bordered($color: blue, $width: 30px) {
+  border: $width solid $color;
+}
+
+.rating-test-block {
+  $myFontSize: 40px !global;
+  $myColor: red;
+  font-size: $myFontSize;
+  background-color: $myColor;
+  width: $myWidth;
+  font: {
+    family: Helvetica, sans-serif;
+    size: 18px;
+    weight: bold;
+  }
+  
+  text: {
+    align: center;
+    transform: lowercase;
+    overflow: hidden;
+  }
+  @include important-text;
+  @include bordered($color: orange);
+
+
+  .section-title, .sample-class {
+    margin-bottom: 16px;
+    @extend .rating-test-block;
+    & {
+      background-color: black;
+    }
+    &__copy {
+      display: none;
+      padding: 1rem 1.5rem 2rem 1.5rem;
+      color: gray;
+      line-height: 1.6;
+      font-size: 14px;
+      font-weight: 500;
+    }
+      &--open {
+        display: block;
+      }
+  }
+  ul > {
+    li {
+      list-style-type: none;
+    }
+  }
+  
+  h2 {
+    + p {
+      border-top: 1px solid gray;
+    }
+  }
+  
+  p {
+    ~ {
+      span {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+<section class="page-section rating-test-block<?= $whiteSection ? ' white-section' : '' ?>"<?= get_custom_anchor( $anchorName ?? null ) ?>>
+    <div class="carrier">
+        <h2 class="section-title"><?= $reitTitle ?? '' ?></h2>
+        <div class="main-rating-test">
+            <span class="count"><?= $reitValue ?? '0' ?></span>
+            <ul class="rating-test-stars total-<?= $reitValueClass ?? '' ?>">
+                <li class="icon icon-star"></li>
+                <li class="icon icon-star"></li>
+                <li class="icon icon-star"></li>
+                <li class="icon icon-star"></li>
+                <li class="icon icon-star"></li>             
+            </ul>
+            <?php if ( !empty( $reitCount ) ) : ?>
+                <span class="total-count"><?= $reitCount ?? '0' ?> reviews</span>
+            <?php endif; ?>
+        </div>
+        <?php if ( !empty( $items ) ) : ?>
+            <div class="rating-test-slider" id="ratingSlider">
+                <button class="simple-knob icon-knob slider-knob next"><span class="icon icon-arrow-thin-right"></span>
+                </button>
+                <button class="simple-knob icon-knob slider-knob prev"><span class="icon icon-arrow-thin-left"></span>
+                </button>
+                <div class="rating-test-slider-wrap">
+                    <ul class="items-list" id="ratingSliderList">
+                        <?php foreach ( $items as $item ) : ?>
+                            <li class="list-item rating-card-wrap">
+                                <div class="rating-test-card">
+                                    <?php if ( !empty( $item->imageId ) ) : ?>
+                                        <img class="logo" src="<?= wp_get_attachment_image_url( $item->imageId, 'medium' ); ?>" alt="logo 1">
+                                    <?php endif; ?>
+                                    <h3 class="block-title"><?= $item->title ?? '' ?></h3>
+                                    <ul class="rating-test-stars total-<?= $item->reitClass ?? '' ?>">
+                                        <li class="icon icon-star"></li>
+                                        <li class="icon icon-star"></li>
+                                        <li class="icon icon-star"></li>
+                                        <li class="icon icon-star"></li>
+                                        <li class="icon icon-star"></li>
+                                    </ul>
+                                    <p class="section-desc"><?= $item->text ?? '' ?></p>
+                                    <?php if ( !empty( $item->parentImageId ) ) : ?>
+                                    <div style="max-height: 188px;" class="rating-test-card-kid">
+                                        <img style="max-height: 188px;" src="<?= wp_get_attachment_image_url( $item->parentImageId, 'medium' ); ?>" alt="kid">
+                                    </div>
+                                    <?php endif; ?>
+                                </div>
+                            </li>
+                        <?php endforeach; ?>
+                </div>
+            </div>
+            <?php if ( !empty( $link->title ) ) : ?>
+                <div class="knob-group center">
+                    <a href="<?= get_link_url( $link ?? null ) ?>"
+                       class="simple-knob blue with-icon"<?= get_target_blank( $link ?? null ) ?>>
+                        <span class="text"><?= $link->title ?></span>
+                        <span class="icon icon-arrow-large-right"></span>
+                    </a>
+                </div>
+            <?php endif; ?>
+        <?php endif; ?>
+    </div>
+    <div class="card">
+        <span class="card__title">This is a title</span>
+        <span class="card__title card__title--second">This is a subtitle</span>
+        <p class="card__paragraph">This is a paragraph</p>
+    </div>
+</section>
+
+.card {
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 3px;
+  max-width: 300px;
+
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    display: block;
+    color:aqua;
+
+    &--second {
+      font-size: 16px;
+    }
+  }
+}
